@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+.brand-toolbar {
+  height: 64px;
+  font: 500 20px/32px Roboto, "Helvetica Neue", sans-serif;
+  padding: 20px;
+  width: 100%;
+  background: #ffab40;
+}
+
+.logo-image {
+  background: url('/assets/logo.png');
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}

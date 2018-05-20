@@ -1,0 +1,103 @@
+$padding__container: 24px;
+
+.selected-items {
+  width: 100%;
+  min-height: calc(100vh - 200px);
+}
+
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container > * {
+  width: 100%;
+}
+
+.form-container form {
+  margin-bottom: 20px;
+}
+
+.form-container form > * {
+  margin: 5px 0;
+}
+
+.form-container .mat-radio-button {
+  margin: 0 5px;
+}
+
+
+mat-card {
+  margin: 10px;
+}
+
+mat-sidenav-container {
+  min-height: calc(100vh - 200px);
+}
+
+.nav-list {
+  padding-top: 15px;
+
+  td {
+    position: relative;    
+    padding-top: 15px;
+    border: 0;
+    cursor: pointer;
+  }
+
+  .active {
+    background: #ffab40;
+  }
+}
+
+.card-item-container {
+  margin-left: 15px;
+  overflow: hidden;
+}
+
+.card-title {
+  a {
+    font-size: 16px;
+    text-decoration: none;
+  }
+}
+.card-desc {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.card-item {
+  height: 150px;
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  cursor: pointer;
+
+  &:hover {
+    transform: translate(0, -1px);
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.16);
+  }
+
+  > img {
+    height: 40px;
+  }
+/*
+  &-mask {
+    position: relative;
+    height: 44px;
+    width: calc(100% + 48px);
+    top: -24px;
+    left: -24px;
+    border-radius: 4px 4px 0 0;
+    background: #1956ef;
+    background: linear-gradient(90deg, #1956ef, #30a0f8);
+  }
+
+  &-logo {
+    height: 40px;
+    width: 56%;
+    margin: 0 22%;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }*/
+}

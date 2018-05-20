@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - '8'
+branches:
+  only:
+    - master
+install:
+  - npm install -g @angular/cli
+  - npm install -g angular-cli-ghpages
+  - npm install
+script:
+  - npm run build:github
+after_script:
+  - git config user.name "stbui"
+  - git config user.email "w431106@163.com"
+  - ngh
+cache:
+  directories:
+    - node_modules
+env:
+  global:
+    - GH_REF: github.com/stbui/angular-material-app.git
+
