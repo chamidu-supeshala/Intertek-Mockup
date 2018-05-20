@@ -255,7 +255,7 @@ var CustomerService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<stbui-base-layout>\r\n\r\n  <mat-horizontal-stepper [linear]=\"false\" #stepper>\r\n    <mat-step>\r\n      <ng-template matStepLabel>General Order Info</ng-template>\r\n      <mat-card class=\"form-container p-4\" >\r\n        <mat-grid-list cols=\"6\" rowHeight=\"70px\">\r\n          <mat-grid-tile  [colspan]=\"3\" [rowspan]=\"1\">\r\n            <mat-form-field style=\"width:100%;\">\r\n              <input matInput placeholder=\"Order Name\" required>\r\n            </mat-form-field>\r\n          </mat-grid-tile>\r\n          <mat-grid-tile  [colspan]=\"3\" [rowspan]=\"1\">\r\n            <mat-form-field style=\"width:100%;\">\r\n              <input matInput [matDatepicker]=\"picker\" placeholder=\"Date of Placement\">\r\n              <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n              <mat-datepicker #picker></mat-datepicker>\r\n            </mat-form-field>\r\n          </mat-grid-tile>\r\n        </mat-grid-list>\r\n        \r\n        <mat-form-field>\r\n          <textarea matInput placeholder=\"Order Description\"></textarea>\r\n        </mat-form-field>\r\n        <br/>\r\n        <mat-form-field class=\"example-full-width\">\r\n          <input type=\"text\" placeholder=\"Choose Order Type\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\">\r\n          <mat-autocomplete #auto=\"matAutocomplete\">\r\n            <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">\r\n              {{ option }}\r\n            </mat-option>\r\n          </mat-autocomplete>\r\n        </mat-form-field>\r\n        \r\n        <form class=\"form-container\">\r\n          <div>\r\n            <label>Other Option: </label>\r\n            <mat-radio-group>\r\n              <mat-radio-button value=\"auto\">Option 1</mat-radio-button>\r\n              <mat-radio-button value=\"always\">Option 2</mat-radio-button>\r\n              <mat-radio-button value=\"never\">Option 3</mat-radio-button>\r\n            </mat-radio-group>\r\n          </div>\r\n        </form>\r\n      </mat-card>\r\n    </mat-step>\r\n    \r\n    \r\n    <mat-step>\r\n      <ng-template matStepLabel>Samples / Tests</ng-template>\r\n      <mat-grid-list cols=\"5\" rowHeight=\"100px\">\r\n        <mat-grid-tile  [colspan]=\"4\" [rowspan]=\"5\" style=\"position:relative;\">\r\n        <mat-sidenav-container style=\"width: 100%;\">\r\n          <mat-sidenav class=\"mat-elevation-z4\" mode=\"side\" [opened]=\"sideOpen\">\r\n      \r\n            <mat-nav-list class=\"nav-list\">\r\n              <h3 mat-subheader>\r\n                <mat-form-field>\r\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n                </mat-form-field>\r\n                <span fxFlex></span>\r\n              </h3>\r\n              <table class=\"table table-hover\" mat-table #table [dataSource]=\"navItems\">\r\n                <ng-container matColumnDef=\"name\">\r\n                  <td mat-cell *matCellDef=\"let element\" matRipple [ngClass]=\"{'active' : element.id == selectedId}\" (click)=\"elementClicked(element.id)\"> {{element.name}} </td>\r\n                </ng-container>\r\n                <tr mat-row *matRowDef=\"let row; columns: ['name']\"></tr>\r\n              </table>\r\n      \r\n            </mat-nav-list>\r\n          </mat-sidenav>\r\n          \r\n          <div @list class=\"card-item-container\" fxLayout=\"row wrap\">\r\n            \r\n              <div @items fxFlex=\"100\" fxFlex.gt-md=\"32\" fxFlex.gt-sm=\"40\" fxFlex.gt-xs=\"50\" *ngFor=\"let l of list; let i=index\" (click)=\"remove(i)\">\r\n                <mat-card class=\"card-item p-1\">\r\n                  <!--\r\n                  <div class=\"card-item-mask\">\r\n                    <div class=\"card-item-logo\" [ngStyle]=\"{}\"></div>\r\n                  </div>\r\n                  -->\r\n                  <mat-card-header class=\"p-1\">\r\n                    <mat-card-title class=\"card-title p-0\">\r\n                      Flexural properties\r\n                    </mat-card-title>\r\n                    <mat-card-subtitle class=\"card-desc p-0\">Energy required to deform a test..</mat-card-subtitle>\r\n                  </mat-card-header>\r\n\r\n                  <button mat-icon-button>\r\n                    <mat-icon>add</mat-icon>\r\n                    Add mesurement\r\n                  </button>\r\n                </mat-card>\r\n              </div>\r\n            </div>\r\n      \r\n        </mat-sidenav-container>\r\n      </mat-grid-tile>\r\n      <mat-grid-tile  [colspan]=\"1\" [rowspan]=\"5\">\r\n      <div class=\"selected-items\" flex>\r\n        <mat-list role=\"list\">\r\n          <mat-list-item role=\"listitem\" *ngFor=\"let l of selectedList; let i=index\">Flexural properties</mat-list-item>\r\n        </mat-list>\r\n      </div>\r\n    </mat-grid-tile>\r\n    </mat-grid-list>\r\n    </mat-step>\r\n    <mat-step>\r\n      <ng-template matStepLabel>Overview / XML</ng-template>\r\n    </mat-step>\r\n  </mat-horizontal-stepper>\r\n\r\n</stbui-base-layout>\r\n"
+module.exports = "<stbui-base-layout>\r\n\r\n  <mat-horizontal-stepper [linear]=\"false\" #stepper>\r\n    <mat-step>\r\n      <ng-template matStepLabel>General Order Info</ng-template>\r\n      <mat-card class=\"form-container p-4\" >\r\n        <mat-grid-list cols=\"6\" rowHeight=\"70px\">\r\n          <mat-grid-tile  [colspan]=\"3\" [rowspan]=\"1\">\r\n            <mat-form-field style=\"width:100%;\">\r\n              <input matInput placeholder=\"Order Name\" required>\r\n            </mat-form-field>\r\n          </mat-grid-tile>\r\n          <mat-grid-tile  [colspan]=\"3\" [rowspan]=\"1\">\r\n            <mat-form-field style=\"width:100%;\">\r\n              <input matInput [matDatepicker]=\"picker\" placeholder=\"Date of Placement\">\r\n              <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n              <mat-datepicker #picker></mat-datepicker>\r\n            </mat-form-field>\r\n          </mat-grid-tile>\r\n        </mat-grid-list>\r\n        \r\n        <mat-form-field>\r\n          <textarea matInput placeholder=\"Order Description\"></textarea>\r\n        </mat-form-field>\r\n        <br/>\r\n        <mat-form-field class=\"example-full-width\">\r\n          <input type=\"text\" placeholder=\"Choose Order Type\" aria-label=\"Number\" matInput [formControl]=\"myControl\" [matAutocomplete]=\"auto\">\r\n          <mat-autocomplete #auto=\"matAutocomplete\">\r\n            <mat-option *ngFor=\"let option of filteredOptions | async\" [value]=\"option\">\r\n              {{ option }}\r\n            </mat-option>\r\n          </mat-autocomplete>\r\n        </mat-form-field>\r\n        \r\n        <form class=\"form-container\">\r\n          <div>\r\n            <label>Other Option: </label>\r\n            <mat-radio-group>\r\n              <mat-radio-button value=\"auto\">Option 1</mat-radio-button>\r\n              <mat-radio-button value=\"always\">Option 2</mat-radio-button>\r\n              <mat-radio-button value=\"never\">Option 3</mat-radio-button>\r\n            </mat-radio-group>\r\n          </div>\r\n        </form>\r\n      </mat-card>\r\n    </mat-step>\r\n    \r\n    \r\n    <mat-step>\r\n      <ng-template matStepLabel>Samples / Tests</ng-template>\r\n      <mat-grid-list cols=\"5\" rowHeight=\"100px\">\r\n        <mat-grid-tile  [colspan]=\"4\" [rowspan]=\"5\" style=\"position:relative;\">\r\n        <mat-sidenav-container style=\"width: 100%;\">\r\n          <mat-sidenav class=\"mat-elevation-z4\" mode=\"side\" [opened]=\"sideOpen\">\r\n      \r\n            <mat-nav-list class=\"nav-list\">\r\n              <h3 mat-subheader>\r\n                <mat-form-field>\r\n                  <input matInput (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n                </mat-form-field>\r\n                <span fxFlex></span>\r\n              </h3>\r\n              <table class=\"table table-hover\" mat-table #table [dataSource]=\"navItems\">\r\n                <ng-container matColumnDef=\"name\">\r\n                  <td mat-cell *matCellDef=\"let element\" matRipple [ngClass]=\"{'active' : element.id == selectedId}\" (click)=\"elementClicked(element.id)\"> {{element.name}} </td>\r\n                </ng-container>\r\n                <tr mat-row *matRowDef=\"let row; columns: ['name']\"></tr>\r\n              </table>\r\n      \r\n            </mat-nav-list>\r\n          </mat-sidenav>\r\n          \r\n          <div @list class=\"card-item-container\" fxLayout=\"row wrap\">\r\n            \r\n              <div @items fxFlex=\"100\" fxFlex.gt-md=\"32\" fxFlex.gt-sm=\"40\" fxFlex.gt-xs=\"50\" *ngFor=\"let l of list; let i=index\" (click)=\"remove(i)\">\r\n                <mat-card class=\"card-item p-1\">\r\n                  <!--\r\n                  <div class=\"card-item-mask\">\r\n                    <div class=\"card-item-logo\" [ngStyle]=\"{}\"></div>\r\n                  </div>\r\n                  -->\r\n                  <mat-card-header class=\"p-1\">\r\n                    <mat-card-title class=\"card-title p-0\">\r\n                      Flexural properties\r\n                    </mat-card-title>\r\n                    <mat-card-subtitle class=\"card-desc p-0\">Energy required to deform a test..</mat-card-subtitle>\r\n                  </mat-card-header>\r\n\r\n                  <button mat-icon-button>\r\n                    <mat-icon>add</mat-icon>\r\n                    Add\r\n                  </button>\r\n                </mat-card>\r\n              </div>\r\n            </div>\r\n      \r\n        </mat-sidenav-container>\r\n      </mat-grid-tile>\r\n      <mat-grid-tile  [colspan]=\"1\" [rowspan]=\"5\">\r\n      <div class=\"selected-items\" flex>\r\n        <mat-list role=\"list\">\r\n          <mat-list-item role=\"listitem\" *ngFor=\"let l of selectedList; let i=index\">Flexural properties</mat-list-item>\r\n        </mat-list>\r\n      </div>\r\n    </mat-grid-tile>\r\n    </mat-grid-list>\r\n    </mat-step>\r\n    <mat-step>\r\n      <ng-template matStepLabel>Overview / XML</ng-template>\r\n    </mat-step>\r\n  </mat-horizontal-stepper>\r\n\r\n</stbui-base-layout>\r\n"
 
 /***/ }),
 
@@ -495,17 +495,85 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 
 
 
 
 var OrderComponent = /** @class */ (function () {
-    function OrderComponent(_service, router) {
-        this._service = _service;
+    function OrderComponent(router) {
         this.router = router;
+        this.dataList = [
+            {
+                "userId": 9,
+                "loginName": "my order1",
+                "loginCount": 39340,
+                "state": "pending",
+                "lastLoginTime": "2017-07-24 18:37:28",
+                "lastLoginIp": "49.77.233.147",
+                "createTime": "2017-04-13 12:15:43",
+                "tenantId": 8
+            },
+            {
+                "userId": 10,
+                "loginName": "my order2",
+                "loginCount": 8524,
+                "state": "pending",
+                "lastLoginTime": "2017-07-24 18:50:12",
+                "lastLoginIp": "180.173.34.254",
+                "createTime": "2017-04-13 12:30:59",
+                "tenantId": 8
+            },
+            {
+                "userId": 11,
+                "loginName": "my order2",
+                "loginCount": 3843,
+                "state": "pending",
+                "lastLoginTime": "2017-07-24 18:46:18",
+                "lastLoginIp": "123.14.28.60",
+                "createTime": "2017-04-14 15:19:09",
+                "tenantId": 8
+            },
+            {
+                "userId": 12,
+                "loginName": "my order5",
+                "loginCount": 1663,
+                "state": "pending",
+                "lastLoginTime": "2017-07-24 18:19:11",
+                "lastLoginIp": "221.214.13.226",
+                "createTime": "2017-04-14 15:19:43",
+                "tenantId": 8
+            },
+            {
+                "userId": 13,
+                "loginName": "my order 6",
+                "loginCount": 1648,
+                "state": "pending",
+                "lastLoginTime": "2017-07-24 17:48:35",
+                "lastLoginIp": "171.221.227.31",
+                "createTime": "2017-04-14 15:20:10",
+                "tenantId": 8
+            },
+            {
+                "userId": 14,
+                "loginName": "my order 8",
+                "loginCount": 1471,
+                "state": "pending",
+                "lastLoginTime": "2017-07-24 17:36:46",
+                "lastLoginIp": "42.228.9.138",
+                "createTime": "2017-04-14 15:20:39",
+                "tenantId": 8
+            },
+            {
+                "userId": 15,
+                "loginName": "my order",
+                "loginCount": 1459,
+                "state": "pending",
+                "lastLoginTime": "2017-07-24 16:55:04",
+                "lastLoginIp": "123.118.189.185",
+                "createTime": "2017-04-14 15:21:01",
+                "tenantId": 8
+            }
+        ];
         this.checked = false;
         this.sideOpen = true;
         this.displayedColumns = ['select', 'id', 'email', 'status', 'date', 'ip', 'action'];
@@ -513,7 +581,7 @@ var OrderComponent = /** @class */ (function () {
         this.selection = new _angular_cdk_collections__WEBPACK_IMPORTED_MODULE_3__["SelectionModel"](true, []);
     }
     OrderComponent.prototype.ngOnInit = function () {
-        this.getUserList();
+        this.dataSource.data = this.dataList;
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
     };
@@ -529,13 +597,6 @@ var OrderComponent = /** @class */ (function () {
         this.isAllSelected() ?
             this.selection.clear() :
             this.dataSource.data.forEach(function (row) { return _this.selection.select(row); });
-    };
-    OrderComponent.prototype.getUserList = function () {
-        var _this = this;
-        this._service.getUserList();
-        this._service.userList$.subscribe(function (res) {
-            _this.dataSource.data = res;
-        });
     };
     OrderComponent.prototype.onEditTriggered = function (user) {
         console.log(user);
@@ -564,8 +625,7 @@ var OrderComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./order.component.html */ "./src/app/pages/order/order.component.html"),
             styles: [__webpack_require__(/*! ./order.component.scss */ "./src/app/pages/order/order.component.scss")]
         }),
-        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])('OrderService')),
-        __metadata("design:paramtypes", [Object, _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], OrderComponent);
     return OrderComponent;
 }());

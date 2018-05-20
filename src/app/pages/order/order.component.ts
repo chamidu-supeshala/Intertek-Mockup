@@ -10,6 +10,79 @@ import { SelectionModel } from '@angular/cdk/collections';
 })
 export class OrderComponent implements OnInit {
 
+  dataList: any[] = [
+    {
+      "userId": 9,
+      "loginName": "my order1",
+      "loginCount": 39340,
+      "state": "pending",
+      "lastLoginTime": "2017-07-24 18:37:28",
+      "lastLoginIp": "49.77.233.147",
+      "createTime": "2017-04-13 12:15:43",
+      "tenantId": 8
+    },
+    {
+      "userId": 10,
+      "loginName": "my order2",
+      "loginCount": 8524,
+      "state": "pending",
+      "lastLoginTime": "2017-07-24 18:50:12",
+      "lastLoginIp": "180.173.34.254",
+      "createTime": "2017-04-13 12:30:59",
+      "tenantId": 8
+    },
+    {
+      "userId": 11,
+      "loginName": "my order2",
+      "loginCount": 3843,
+      "state": "pending",
+      "lastLoginTime": "2017-07-24 18:46:18",
+      "lastLoginIp": "123.14.28.60",
+      "createTime": "2017-04-14 15:19:09",
+      "tenantId": 8
+    },
+    {
+      "userId": 12,
+      "loginName": "my order5",
+      "loginCount": 1663,
+      "state": "pending",
+      "lastLoginTime": "2017-07-24 18:19:11",
+      "lastLoginIp": "221.214.13.226",
+      "createTime": "2017-04-14 15:19:43",
+      "tenantId": 8
+    },
+    {
+      "userId": 13,
+      "loginName": "my order 6",
+      "loginCount": 1648,
+      "state": "pending",
+      "lastLoginTime": "2017-07-24 17:48:35",
+      "lastLoginIp": "171.221.227.31",
+      "createTime": "2017-04-14 15:20:10",
+      "tenantId": 8
+    },
+    {
+      "userId": 14,
+      "loginName": "my order 8",
+      "loginCount": 1471,
+      "state": "pending",
+      "lastLoginTime": "2017-07-24 17:36:46",
+      "lastLoginIp": "42.228.9.138",
+      "createTime": "2017-04-14 15:20:39",
+      "tenantId": 8
+    },
+    {
+      "userId": 15,
+      "loginName": "my order",
+      "loginCount": 1459,
+      "state": "pending",
+      "lastLoginTime": "2017-07-24 16:55:04",
+      "lastLoginIp": "123.118.189.185",
+      "createTime": "2017-04-14 15:21:01",
+      "tenantId": 8
+    }
+  ];
+
   checked = false;
 
   sideOpen: boolean = true;
@@ -22,12 +95,11 @@ export class OrderComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(
-    @Inject('OrderService') private _service,
     private router: Router
   ) { }
 
   ngOnInit() {
-    this.getUserList();
+    this.dataSource.data = this.dataList;
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
@@ -44,13 +116,6 @@ export class OrderComponent implements OnInit {
     this.isAllSelected() ?
         this.selection.clear() :
         this.dataSource.data.forEach(row => this.selection.select(row));
-  }
-
-  getUserList() {
-    this._service.getUserList();
-    this._service.userList$.subscribe(res => {
-      this.dataSource.data = res;
-    });
   }
 
   onEditTriggered(user) {
