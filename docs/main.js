@@ -727,7 +727,7 @@ var CoreModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"brand-toolbar mat-elevation-z2\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n  <mat-icon>view_compact</mat-icon>\n  <span class=\"logo-image\"></span>\n</div>\n"
+module.exports = "<div class=\"brand-toolbar mat-elevation-z2\" fxLayout=\"row\" fxLayoutAlign=\"start center\">\n  <mat-icon>view_compact</mat-icon>\n  <span class=\"logo-image\" ngStyle=\"{'background' : 'assets/logo.png'}\"></span>\n</div>\n"
 
 /***/ }),
 
@@ -738,7 +738,7 @@ module.exports = "<div class=\"brand-toolbar mat-elevation-z2\" fxLayout=\"row\"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ":host {\n  display: block; }\n\n.brand-toolbar {\n  height: 64px;\n  font: 500 20px/32px Roboto, \"Helvetica Neue\", sans-serif;\n  padding: 20px;\n  width: 100%;\n  background: #ffab40; }\n\n.logo-image {\n  background: url(\"/assets/logo.png\");\n  width: 100%;\n  height: 100%;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position-x: center;\n  background-position-y: center; }\n"
+module.exports = ":host {\n  display: block; }\n\n.brand-toolbar {\n  height: 64px;\n  font: 500 20px/32px Roboto, \"Helvetica Neue\", sans-serif;\n  padding: 20px;\n  width: 100%;\n  background: #ffab40; }\n\n.logo-image {\n  width: 100%;\n  height: 100%;\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position-x: center;\n  background-position-y: center; }\n"
 
 /***/ }),
 
