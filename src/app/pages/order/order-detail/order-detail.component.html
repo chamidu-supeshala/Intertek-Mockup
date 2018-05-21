@@ -48,8 +48,8 @@
     
     <mat-step>
       <ng-template matStepLabel>Samples / Tests</ng-template>
-      <mat-grid-list cols="5" rowHeight="100px">
-        <mat-grid-tile  [colspan]="4" [rowspan]="5" style="position:relative;">
+      <div class="row">
+        <div class="col-10" style="position:relative;">
         <mat-sidenav-container style="width: 100%;">
           <mat-sidenav class="mat-elevation-z4" mode="side" [opened]="sideOpen">
       
@@ -95,15 +95,15 @@
             </div>
       
         </mat-sidenav-container>
-      </mat-grid-tile>
-      <mat-grid-tile  [colspan]="1" [rowspan]="5">
+      </div>
+      <div class="col-2">
       <div class="selected-items" flex>
         <mat-list role="list">
           <mat-list-item role="listitem" *ngFor="let l of selectedList; let i=index">Flexural properties</mat-list-item>
         </mat-list>
       </div>
-    </mat-grid-tile>
-    </mat-grid-list>
+    </div>
+  </div>
     </mat-step>
     <mat-step>
       <ng-template matStepLabel>Overview / XML</ng-template>
